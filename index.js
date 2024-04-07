@@ -49,7 +49,7 @@ async function myShoppingTodo(shopping) {
         }
         if (ans.select == "View Item") {
             console.log(chalk.blue.italic.bold("\t *** MY SHOPPING LIST *** \t"));
-            shoppingTodo.forEach((shoppingTodo) => console.log(chalk.green.italic.bold(shoppingTodo)));
+            shoppingTodo.forEach((shoppingTodo, index) => console.log(chalk.green.italic.bold(`${index + 1}.${shoppingTodo}`)));
             console.log(chalk.yellow.italic.bold("\t *** THANK YOU *** \t"));
         }
         if (ans.select == "Delete Item") {
