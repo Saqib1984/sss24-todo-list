@@ -32,7 +32,7 @@ async function myShoppingTodo(shopping: string[]) {
         message: chalk.green.italic.bold("Add item to the list"),
       });
       shoppingTodo.push(addItemTodo.shoppingTodo);
-      shoppingTodo.forEach((shopping) => console.log(chalk.green.italic.bold(shopping)));
+      shoppingTodo.forEach((shopping, index) => console.log(chalk.green.italic.bold(`${index + 1}.${shopping}`)));
     }
     if (ans.select == "Update List") {
       let updateItemTodo = await inquirer.prompt({
@@ -49,7 +49,7 @@ async function myShoppingTodo(shopping: string[]) {
       });
       let newTodo = shoppingTodo.filter((val) => val !== updateItemTodo.shoppingTodo);
       shoppingTodo = [...newTodo, addItemTodo.shoppingTodo];
-      shoppingTodo.forEach((shoppingTodo) => console.log(chalk.blue.italic.bold(shoppingTodo)));
+      shoppingTodo.forEach((shoppingTodo, index) => console.log(chalk.blue.italic.bold(`${index + 1}.${shoppingTodo}`)));
     }
     if (ans.select == "View Item") {
       console.log(chalk.blue.italic.bold("\t *** MY SHOPPING LIST *** \t"));
@@ -65,7 +65,7 @@ async function myShoppingTodo(shopping: string[]) {
       });
       let newTodo = shoppingTodo.filter((val) => val !== deleteItemTodo.shoppingTodo);
       shoppingTodo = [...newTodo];
-      shoppingTodo.forEach((shoppingTodo) => console.log(chalk.green.italic.bold(shoppingTodo)));
+      shoppingTodo.forEach((shoppingTodo, index) => console.log(chalk.green.italic.bold(`${index + 1}. ${shoppingTodo}`)));
     }
     
   } while (true);
